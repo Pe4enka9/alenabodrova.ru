@@ -10,11 +10,8 @@ return new class extends Migration
     {
         Schema::create('specializations', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->unsignedBigInteger('subcategory_id');
+            $table->string('name');
             $table->timestamps();
-
-            $table->foreign('subcategory_id')->references('id')->on('subcategories');
         });
     }
 

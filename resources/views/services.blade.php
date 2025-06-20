@@ -18,24 +18,35 @@
                                     <div class="price-list-item">
                                         <p>{{ $subcategory->name }}</p>
 
-                                        @foreach($subcategory->specializations as $specialization)
-                                            <p class="serv-name">{{ $specialization->name }}</p>
+                                        <div class="price-lists">
+                                            @foreach($subcategory->grouped_services as $serviceInGroup)
+                                                <div class="price-list">
+                                                    <p class="serv-name">{{ optional($serviceInGroup[0]->specialization)->name }}</p>
 
-                                            <div class="price-table">
-                                                <div class="price-table-row">
-                                                    @foreach($specialization->services as $service)
-                                                        <p>{{ !is_null($service->length) ? "{$service->length->name}:" : '' }} {{ !is_null($service->additionally) ? "+$service->additionally материал" : '' }} {{ $service->price }}
-                                                            руб.</p>
+                                                    @foreach($serviceInGroup as $service)
+                                                        @if(!is_null($service?->length?->name))
+                                                            <p>{{ $service->length->name }} - {{ $service->price }}
+                                                                &#8381;</p>
+                                                        @else
+                                                            <p>{{ $service->price }} &#8381;</p>
+                                                        @endif
+
+                                                        @if(!is_null($service->additionally))
+                                                            <p>+ {{ $service->additionally }} материал</p>
+                                                        @endif
                                                     @endforeach
                                                 </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
                     </li>
                 @endforeach
+
+
+
                 {{--                @foreach ($serviceTypes as $st)--}}
                 {{--                    <li class="serv-item">--}}
                 {{--                        <input type="checkbox" checked>--}}

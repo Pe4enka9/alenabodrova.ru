@@ -32,6 +32,15 @@ class DatabaseSeeder extends Seeder
             )
             ->create();
 
+        Specialization::factory()
+            ->count(3)
+            ->sequence(
+                ['name' => 'Стилист'],
+                ['name' => 'Топ-стилист'],
+                ['name' => 'Арт-стилист'],
+            )
+            ->create();
+
         Category::factory()
             ->count(6)
             ->sequence(
@@ -158,624 +167,501 @@ class DatabaseSeeder extends Seeder
             )
             ->create();
 
-        Specialization::factory()
-            ->count(51)
-            ->sequence(
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 1,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 1,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 1,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 2,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 2,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 2,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 3,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 3,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 3,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 4,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 4,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 4,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 5,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 5,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 5,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 6,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 6,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 6,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 7,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 7,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 7,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 8,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 8,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 8,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 9,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 9,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 9,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 10,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 10,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 10,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 11,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 11,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 11,
-                ],
-                [
-                    'name' => 'Стилист',
-                    'subcategory_id' => 12,
-                ],
-                [
-                    'name' => 'Топ-стилист',
-                    'subcategory_id' => 12,
-                ],
-                [
-                    'name' => 'Арт-стилист',
-                    'subcategory_id' => 12,
-                ],
-                [
-                    'subcategory_id' => 13,
-                ],
-                [
-                    'subcategory_id' => 14,
-                ],
-                [
-                    'subcategory_id' => 15,
-                ],
-                [
-                    'subcategory_id' => 16,
-                ],
-                [
-                    'subcategory_id' => 17,
-                ],
-                [
-                    'subcategory_id' => 18,
-                ],
-                [
-                    'subcategory_id' => 19,
-                ],
-                [
-                    'subcategory_id' => 20,
-                ],
-                [
-                    'subcategory_id' => 21,
-                ],
-                [
-                    'subcategory_id' => 22,
-                ],
-                [
-                    'subcategory_id' => 23,
-                ],
-                [
-                    'subcategory_id' => 24,
-                ],
-                [
-                    'subcategory_id' => 25,
-                ],
-                [
-                    'subcategory_id' => 26,
-                ],
-                [
-                    'subcategory_id' => 27,
-                ],
-            )
-            ->create();
-
         Service::factory()
             ->count(90)
             ->sequence(
                 [
                     'specialization_id' => 1,
+                    'subcategory_id' => 1,
                     'length_id' => 1,
                     'price' => 1000,
                 ],
                 [
                     'specialization_id' => 1,
+                    'subcategory_id' => 1,
                     'length_id' => 2,
                     'price' => 1200,
                 ],
                 [
                     'specialization_id' => 1,
+                    'subcategory_id' => 1,
                     'length_id' => 3,
                     'price' => 1500,
                 ],
                 [
                     'specialization_id' => 2,
+                    'subcategory_id' => 1,
                     'length_id' => 1,
                     'price' => 1200,
                 ],
                 [
                     'specialization_id' => 2,
+                    'subcategory_id' => 1,
                     'length_id' => 2,
                     'price' => 1500,
                 ],
                 [
                     'specialization_id' => 2,
+                    'subcategory_id' => 1,
                     'length_id' => 3,
                     'price' => 2000,
                 ],
                 [
                     'specialization_id' => 3,
+                    'subcategory_id' => 1,
                     'length_id' => 1,
                     'price' => 1500,
                 ],
                 [
                     'specialization_id' => 3,
+                    'subcategory_id' => 1,
                     'length_id' => 2,
                     'price' => 2000,
                 ],
                 [
                     'specialization_id' => 3,
+                    'subcategory_id' => 1,
                     'length_id' => 3,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 4,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 2,
                     'price' => 1000,
                 ],
                 [
-                    'specialization_id' => 5,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 2,
                     'price' => 1200,
                 ],
                 [
-                    'specialization_id' => 6,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 2,
                     'price' => 1500,
                 ],
                 [
-                    'specialization_id' => 7,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 3,
                     'price' => 1500,
                 ],
                 [
-                    'specialization_id' => 8,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 3,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 9,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 3,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 10,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 4,
                     'price' => 300,
                 ],
                 [
-                    'specialization_id' => 11,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 4,
                     'price' => 500,
                 ],
                 [
-                    'specialization_id' => 12,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 4,
                     'price' => 800,
                 ],
                 [
-                    'specialization_id' => 13,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 5,
                     'price' => 1000,
                 ],
                 [
-                    'specialization_id' => 14,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 5,
                     'price' => 1200,
                 ],
                 [
-                    'specialization_id' => 15,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 5,
                     'price' => 1500,
                 ],
                 [
-                    'specialization_id' => 16,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 6,
                     'length_id' => 1,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 16,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 6,
                     'length_id' => 2,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 16,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 6,
                     'length_id' => 3,
                     'price' => 4000,
                 ],
                 [
-                    'specialization_id' => 17,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 6,
                     'length_id' => 1,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 17,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 6,
                     'length_id' => 2,
                     'price' => 3000,
                 ],
                 [
-                    'specialization_id' => 17,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 6,
                     'length_id' => 3,
                     'price' => 5000,
                 ],
                 [
-                    'specialization_id' => 18,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 6,
                     'length_id' => 1,
                     'price' => 3000,
                 ],
                 [
-                    'specialization_id' => 18,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 6,
                     'length_id' => 2,
                     'price' => 4000,
                 ],
                 [
-                    'specialization_id' => 18,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 6,
                     'length_id' => 3,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 19,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 7,
                     'length_id' => 1,
                     'price' => 4000,
                 ],
                 [
-                    'specialization_id' => 19,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 7,
                     'length_id' => 2,
                     'price' => 5000,
                 ],
                 [
-                    'specialization_id' => 19,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 7,
                     'length_id' => 3,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 20,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 7,
                     'length_id' => 1,
                     'price' => 5000,
                 ],
                 [
-                    'specialization_id' => 20,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 7,
                     'length_id' => 2,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 20,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 7,
                     'length_id' => 3,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 21,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 7,
                     'length_id' => 1,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 21,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 7,
                     'length_id' => 2,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 21,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 7,
                     'length_id' => 3,
                     'price' => 9000,
                 ],
                 [
-                    'specialization_id' => 22,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 8,
                     'length_id' => 1,
                     'price' => 5000,
                 ],
                 [
-                    'specialization_id' => 22,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 8,
                     'length_id' => 2,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 22,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 8,
                     'length_id' => 3,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 23,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 8,
                     'length_id' => 1,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 23,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 8,
                     'length_id' => 2,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 23,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 8,
                     'length_id' => 3,
                     'price' => 8000,
                 ],
                 [
-                    'specialization_id' => 24,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 8,
                     'length_id' => 1,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 24,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 8,
                     'length_id' => 2,
                     'price' => 8000,
                 ],
                 [
-                    'specialization_id' => 24,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 8,
                     'length_id' => 3,
                     'price' => 10000,
                 ],
                 [
-                    'specialization_id' => 25,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 9,
                     'length_id' => 1,
                     'price' => 6000,
                 ],
                 [
-                    'specialization_id' => 25,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 9,
                     'length_id' => 2,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 25,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 9,
                     'length_id' => 3,
                     'price' => 8000,
                 ],
                 [
-                    'specialization_id' => 26,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 9,
                     'length_id' => 1,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 26,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 9,
                     'length_id' => 2,
                     'price' => 10000,
                 ],
                 [
-                    'specialization_id' => 26,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 9,
                     'length_id' => 3,
                     'price' => 15000,
                 ],
                 [
-                    'specialization_id' => 27,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 9,
                     'length_id' => 1,
                     'price' => 10000,
                 ],
                 [
-                    'specialization_id' => 27,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 9,
                     'length_id' => 2,
                     'price' => 15000,
                 ],
                 [
-                    'specialization_id' => 27,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 9,
                     'length_id' => 3,
                     'price' => 20000,
                 ],
                 [
-                    'specialization_id' => 28,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 10,
                     'length_id' => 2,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 28,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 10,
                     'length_id' => 3,
                     'price' => 8000,
                 ],
                 [
-                    'specialization_id' => 29,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 10,
                     'length_id' => 2,
                     'price' => 10000,
                 ],
                 [
-                    'specialization_id' => 29,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 10,
                     'length_id' => 3,
                     'price' => 15000,
                 ],
                 [
-                    'specialization_id' => 30,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 10,
                     'length_id' => 2,
                     'price' => 15000,
                 ],
                 [
-                    'specialization_id' => 30,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 10,
                     'length_id' => 3,
                     'price' => 20000,
                 ],
                 [
-                    'specialization_id' => 31,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 11,
                     'length_id' => 2,
                     'price' => 1800,
                 ],
                 [
-                    'specialization_id' => 31,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 11,
                     'length_id' => 3,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 32,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 11,
                     'length_id' => 2,
                     'price' => 1800,
                 ],
                 [
-                    'specialization_id' => 32,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 11,
                     'length_id' => 3,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 33,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 11,
                     'length_id' => 2,
                     'price' => 1800,
                 ],
                 [
-                    'specialization_id' => 33,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 11,
                     'length_id' => 3,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 34,
+                    'specialization_id' => 1,
+                    'subcategory_id' => 12,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 35,
+                    'specialization_id' => 2,
+                    'subcategory_id' => 12,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 36,
+                    'specialization_id' => 3,
+                    'subcategory_id' => 12,
                     'price' => 3000,
                 ],
                 [
-                    'specialization_id' => 37,
+                    'subcategory_id' => 13,
                     'price' => 150,
                 ],
                 [
-                    'specialization_id' => 37,
+                    'subcategory_id' => 13,
                     'price' => 180,
                 ],
                 [
-                    'specialization_id' => 38,
+                    'subcategory_id' => 14,
                     'price' => 2500,
                 ],
                 [
-                    'specialization_id' => 39,
+                    'subcategory_id' => 15,
                     'price' => 8000,
                 ],
                 [
-                    'specialization_id' => 40,
+                    'subcategory_id' => 16,
                     'price' => 7000,
                 ],
                 [
-                    'specialization_id' => 41,
+                    'subcategory_id' => 17,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 42,
+                    'subcategory_id' => 18,
                     'price' => 2000,
                 ],
                 [
-                    'specialization_id' => 43,
+                    'subcategory_id' => 19,
                     'price' => 4000,
                     'additionally' => 1500,
                 ],
                 [
-                    'specialization_id' => 44,
+                    'subcategory_id' => 20,
                     'price' => 6000,
                     'additionally' => 2000,
                 ],
                 [
-                    'specialization_id' => 45,
+                    'subcategory_id' => 21,
                     'price' => 6000,
                     'additionally' => 6500,
                 ],
                 [
-                    'specialization_id' => 46,
+                    'subcategory_id' => 22,
                     'price' => 1000,
                     'additionally' => 250,
                 ],
                 [
-                    'specialization_id' => 47,
+                    'subcategory_id' => 23,
                     'price' => 2000,
                     'additionally' => 800,
                 ],
                 [
-                    'specialization_id' => 48,
+                    'subcategory_id' => 24,
                     'price' => 800,
                 ],
                 [
-                    'specialization_id' => 49,
+                    'subcategory_id' => 25,
                     'price' => 1000,
                 ],
                 [
-                    'specialization_id' => 49,
+                    'subcategory_id' => 25,
                     'price' => 1300,
                 ],
                 [
-                    'specialization_id' => 50,
+                    'subcategory_id' => 26,
                     'price' => 800,
                 ],
                 [
-                    'specialization_id' => 50,
+                    'subcategory_id' => 26,
                     'price' => 1000,
                 ],
                 [
-                    'specialization_id' => 51,
+                    'subcategory_id' => 27,
                     'price' => 1500,
                 ],
             )

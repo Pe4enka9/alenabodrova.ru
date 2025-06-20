@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int $id
  * @property int|null $specialization_id
+ * @property int $subcategory_id
  * @property int|null $length_id
  * @property float $price
- * @property float $additionally
+ * @property float|null $additionally
  *
- * @property-read Specialization $specialization
  * @property-read Length $length
+ * @property-read Specialization $specialization
  */
 class Service extends Model
 {
@@ -22,13 +23,13 @@ class Service extends Model
 
     protected $guarded = ['id'];
 
-    public function specialization(): BelongsTo
-    {
-        return $this->belongsTo(Specialization::class, 'specialization_id');
-    }
-
     public function length(): BelongsTo
     {
         return $this->belongsTo(Length::class, 'length_id');
+    }
+
+    public function specialization(): BelongsTo
+    {
+        return $this->belongsTo(Specialization::class, 'specialization_id');
     }
 }
