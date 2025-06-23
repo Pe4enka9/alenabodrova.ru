@@ -42,29 +42,16 @@
     <div class="container">
         <h1 class="name-sect">Текущие записи</h1>
         <div class="card-container">
-
-            <div class="card">
-                <p class="card-header">Анна П. — Парикмахер</p>
-                <p class="card-detail"><span class="card-label">Время:</span> 14:30</p>
-                <p class="card-detail"><span class="card-label">Услуга:</span> Стрижка</p>
-                <p class="card-detail"><span class="card-label">Дата:</span> 2024-06-10</p>
-            </div>
-
-            <div class="card">
-                <p class="card-header">Игорь С. — Косметолог</p>
-                <p class="card-detail">
-                    <span class="card-label">Услуга:</span> Чистка лица
-                </p>
-                <p class="card-detail"><span class="card-label">Дата:</span> 2024-06-12</p>
-                <p class="card-detail"><span class="card-label">Время:</span> 10:00</p>
-            </div>
-
-            <div class="card">
-                <p class="card-header">Елена К. — Мастер маникюра</p>
-                <p class="card-detail"><span class="card-label">Услуга:</span> Маникюр</p>
-                <p class="card-detail"><span class="card-label">Дата:</span> 2024-06-15</p>
-                <p class="card-detail"><span class="card-label">Время:</span> 16:00</p>
-            </div>
+            @foreach($employments as $employment)
+                <div class="card">
+                    <p class="card-header">{{ $employment->specialist->user->name }} {{ mb_substr($employment->specialist->user->surname, 0, 1) }}. — {{ $employment->specialist->specialization->name }}</p>
+                    <p class="card-detail"><span class="card-label">Время:</span> {{ $employment->date->format('H:i') }}</p>
+                    <p class="card-detail"><span
+                            class="card-label">Услуга:</span> {{ $employment->service->subcategory->category->name }}: {{ $employment->service->subcategory->name }}</p>
+                    <p class="card-detail"><span
+                            class="card-label">Дата:</span> {{ $employment->date->format('d.m.Y') }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

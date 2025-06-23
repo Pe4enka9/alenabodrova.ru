@@ -7,7 +7,7 @@
         <main class="dflex table">
             <nav class="sidebar">
                 <ul class="menu">
-                    <li class="menu-item"><a href="#employees">Сотрудники</a></li>
+                    <li class="menu-item"><a href="{{ route('admin') }}">Сотрудники</a></li>
                     <li class="menu-item"><a href="#services">Услуги</a></li>
                     <li class="menu-item"><a href="#users">Пользователи</a></li>
                     <li class="menu-item"><a href="#records">Записи</a></li>

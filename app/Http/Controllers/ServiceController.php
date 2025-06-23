@@ -7,6 +7,7 @@ use Illuminate\View\View;
 
 class ServiceController extends Controller
 {
+    // Вывод всех услуг
     public function index(): View
     {
         $categories = Category::with('subcategories.services.specialization')->get();

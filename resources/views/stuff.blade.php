@@ -17,9 +17,16 @@
                     <p class="role">
                         {{ $stuff->specializations->pluck('name')->implode(' / ') }}
                     </p>
-                    <a href="{{ route('stuff.create', $stuff) }}">
-                        <button class="stuff-make-order">Записаться</button>
-                    </a>
+
+                    @if(auth()->check())
+                        <a href="{{ route('stuff.create', $stuff) }}">
+                            <button class="stuff-make-order">Записаться</button>
+                        </a>
+                    @else
+                        <a href="{{ route('sign-in.form') }}">
+                            <button class="stuff-make-order">Записаться</button>
+                        </a>
+                    @endif
                 </div>
             @endforeach
 

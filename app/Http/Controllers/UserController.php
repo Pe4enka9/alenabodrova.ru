@@ -6,6 +6,7 @@ use App\Http\Requests\AddStuffRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\SignInRequest;
 use App\Http\Requests\UpdateStuffRequest;
+use App\Models\Employment;
 use App\Models\Specialization;
 use App\Models\Stuff;
 use App\Models\User;
@@ -64,7 +65,11 @@ class UserController extends Controller
 
     public function profile(): View
     {
-        return view('profile');
+        $employments = Employment::where('user_id', Auth::user()->id)->get();
+
+        return view('profile', [
+            'employments' => $employments,
+        ]);
     }
 
     public function admin()
@@ -88,7 +93,7 @@ class UserController extends Controller
     public function addStuffForm(): View
     {
         return view('admin.add-stuff', [
-            'specializations' => Specialization::limit(3)->get(),
+            'specializations' => Specialization::all(),
         ]);
     }
 

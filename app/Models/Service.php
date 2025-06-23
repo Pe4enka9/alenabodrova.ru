@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @property-read Length $length
  * @property-read Specialization $specialization
+ * @property-read Subcategory $subcategory
  */
 class Service extends Model
 {
@@ -31,5 +32,10 @@ class Service extends Model
     public function specialization(): BelongsTo
     {
         return $this->belongsTo(Specialization::class, 'specialization_id');
+    }
+
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(SubCategory::class, 'subcategory_id');
     }
 }

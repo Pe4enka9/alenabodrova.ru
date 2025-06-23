@@ -22,17 +22,18 @@ form {
     padding: 40px;
 }
 
-
 .grid-form {
     display: flex;
     flex-direction: column;
 
     gap: 20px 40px;
 }
+
 .two-rows {
     display: flex;
     justify-content: space-between;
 }
+
 .two-rows > div {
     display: flex;
     flex-direction: column;
@@ -50,21 +51,32 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+.full-row.hidden {
+    display: none;
+}
+
 .full-row > input,
 .full-row > select {
     width: 100%;
 }
+
 .row-checkbox {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.row-checkbox > label { font-size: 14px;}
+
+.row-checkbox > label {
+    font-size: 14px;
+}
+
 .row-checkbox > input {
     width: 15px;
     height: 15px;
     margin-right: 8px;
 }
+
 .grid-form > div > p,
 .flex-form > div > p {
     font-size: 14px;
